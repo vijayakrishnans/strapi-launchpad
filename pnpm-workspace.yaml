@@ -1,0 +1,18 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+  - "tests/*"
+  - "tooling/*"
+
+# pnpm 10 blocks dependency build scripts unless allow-listed; wrangler's
+# workerd and esbuild need theirs to verify their platform binaries.
+onlyBuiltDependencies:
+  - esbuild
+  - workerd
+
+# framer-motion 12.23.12 (upstream's lock) imports `activeAnimations` from
+# motion-dom, which later 12.x releases removed: hold its two companions at
+# upstream's locked versions.
+overrides:
+  motion-dom: 12.23.12
+  motion-utils: 12.23.6
