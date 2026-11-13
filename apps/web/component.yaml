@@ -134,7 +134,7 @@ spec:
     # name, which is the owner's to change and HTML-escaped when it carries an
     # `&` or `'`); and the Worker itself answers /api/health, which no static
     # file can. Buffered before grep so an early match cannot SIGPIPE curl.
-    smokeCommand: 'html=$(curl -sfL "${DEPLOYED_URL}/") && echo "${html}" | grep -q "/en/pricing" && health=$(curl -sf "${DEPLOYED_URL}/api/health") && echo "${health}" | grep -q "\"ok\":true"'
+    smokeCommand: 'html=$(curl -sfL "${DEPLOYED_URL}/") && grep -q "/en/pricing" <<< "${html}" && health=$(curl -sf "${DEPLOYED_URL}/api/health") && grep -q "\"ok\":true" <<< "${health}"'
   labels:
     team: platform
     layer: delivery
