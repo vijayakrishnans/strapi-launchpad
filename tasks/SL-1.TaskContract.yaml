@@ -1,0 +1,14 @@
+apiVersion: orun.io/v1
+kind: TaskContract
+metadata:
+  name: SL-1
+spec:
+  goal: The web smoke passes on stage and prod by asserting with here-strings instead of piping a large page into grep -q.
+  affects:
+    - apps/web/component.yaml
+    - apps/web/docs
+    - tasks/SL-1.TaskContract.yaml
+  doneWhen:
+    - apps/web smokeCommand contains no `| grep -q`
+    - the main convergence after merge shows web stage and prod verify-deploy green, smoke included
+  gates: []
