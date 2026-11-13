@@ -18,10 +18,9 @@ connect Strapi. Once you give the build your project's URL, it renders yours.
 ## Live deployment
 
 <!-- 02-docs:begin -->
-Not recorded yet. The bootstrap's last phase writes the live URLs, the
-workspace, whether a Strapi project is connected and the secrets the site uses
-into [ai/context/deployment.md](ai/context/deployment.md); how the site
-deploys and how to operate it is in
+This site is **live**. Verified URLs, identity and the secrets it uses are
+recorded in [ai/context/deployment.md](ai/context/deployment.md) (re-rendered
+by the `02-docs` phase); how it deploys and how to operate it:
 [ai/context/operations.md](ai/context/operations.md).
 <!-- 02-docs:end -->
 
